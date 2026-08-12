@@ -14,7 +14,7 @@ function Projects() {
         <SectionHeading
           eyebrow="What I've built"
           title="Latest Projects"
-          subtitle="Agentic AI, RAG, and robotics — a mix of shipped work and projects in progress."
+          subtitle="A mix of AI agents, hackathon builds, and full-stack apps, most of them shipped on Vercel."
         />
         <MotionGrid
           columns={{ base: 1, sm: 2, lg: 3 }}
