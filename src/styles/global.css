@@ -1,0 +1,147 @@
+html {
+  background: #000;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #2566e8;
+  color: #fff;
+}
+
+/* Custom cursor ripple */
+.near-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out forwards;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  to {
+    box-shadow: 0 0 0 24px rgba(255, 255, 255, 0);
+  }
+}
+
+/* Glassmorphic monochrome card */
+.monochrome-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border-radius: 16px;
+}
+
+.monochrome-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+.monochrome-button {
+  background: white;
+  color: #000;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.monochrome-button:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.monochrome-button-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.monochrome-button-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.monochrome-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.monochrome-heading {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.monochrome-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Full-bleed scrolling name marquee */
+.scrolling-name-container {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  white-space: nowrap;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.scrolling-name {
+  display: inline-block;
+  font-size: clamp(2.5rem, 10vw, 8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  animation: scroll-left 20s linear infinite;
+  padding-left: 100%;
+  font-family: Inter, sans-serif;
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+.scrolling-name-container:hover .scrolling-name {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+/* Utility fade-in-up used alongside Framer Motion variants */
+.section-heading-accent {
+  color: #2566e8;
+}
